@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -24,6 +25,7 @@ body {
   background-color: rgba(248, 245, 236, 1);
   width: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -96,7 +98,10 @@ body {
   color: rgba(165, 28, 48, 1);
 }
 
-.who_is p {
+.who_is p,
+.new_beggining_section p,
+.learn_section p,
+.building_section p {
   font-family: "Inter", serif;
   font-size: var(--fs-base);
   color: rgba(30, 47, 116, 1);
@@ -116,7 +121,7 @@ path {
 }
 
 .one_night_section {
-  position: relative;
+  /* position: relative; */
   background-color: rgba(30, 47, 116, 1);
   border-top-left-radius: 170px;
   /* Round the top-left corner */
@@ -124,41 +129,46 @@ path {
 }
 
 .one_night_section h1 {
-  position: absolute;
+  /* position: absolute; */
   font-family: "IM Fell French Canon SC", serif;
   font-size: var(--fs-lg);
   text-transform: uppercase;
-  top: 7%;
-  left: 20%;
+  padding-top: 3em;
+  display: flex;
+  justify-content: center;
   color: rgba(248, 245, 236, 1);
 }
 
 .one_night_section h2 {
-  position: absolute;
-
-  left: 12%;
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  margin-top: -0.2em;
   font-family: "Lora", serif;
   font-size: 120px;
   color: rgba(215, 40, 42, 1);
 }
 
 .one_night_image {
-  padding-top: 5em;
+  margin-top: -18em;
   width: 320px;
 }
 
 .eye {
-  position: absolute;
-  top: 12%;
-  left: 7%;
+  margin-top: -24em;
 }
 
 .one_night_section_text {
-  margin-top: 25em;
   font-family: "Inter", serif;
   font-size: var(--fs-base);
   color: rgba(248, 245, 236, 1);
   margin-left: 1em;
+  padding-bottom: 3em;
+  width: 18em;
+}
+
+.one_night_section_text p {
+  margin-bottom: 1.5em;
 }
 
 .attack_section {
@@ -167,23 +177,145 @@ path {
 
 }
 
+.footprint {
+  margin-left: -6em;
+  margin-top: -3em;
+}
+
 .attack_section_text {
   position: absolute;
-  top: 30%;
-  left: 10%;
-  margin-left: 1em;
+  top: 22%;
+  left: 25%;
   font-family: "Inter", serif;
   font-size: var(--fs-base);
   color: rgba(248, 245, 236, 1);
-  display: flex;
-  width: 15em;
-  justify-content: center;
-  align-items: center;
+  width: 12em;
 }
 
 .attack_section p {
   font-family: "Inter", serif;
-  font-size: var(--fs-md);
+  font-size: var(--fs-base);
   color: rgba(248, 245, 236, 1);
-  margin-left: 1em;
+  display: flex;
+  justify-self: center;
+  margin-bottom: 3em;
+  width: 12em;
+}
+
+.arrow {
+  margin-left: -2em;
+  margin-bottom: -1em;
+}
+
+.printing-press {
+  margin-top: -30em;
+  margin-left: 2em;
+  opacity: 0.2;
+}
+
+.new_beggining_section {
+  margin: 1em;
+}
+
+.new_beggining_section h1 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-xl);
+  text-transform: uppercase;
+  color: rgba(165, 28, 48, 1);
+}
+
+.new_beggining_section h2 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  margin-left: 2.7em;
+  margin-top: -1.4em;
+  color: rgba(165, 28, 48, 1);
+}
+
+.clouds {
+  margin-left: -50em;
+  margin-top: -12em;
+}
+
+.learn_section {
+  margin: 1em;
+  margin-bottom: 7em;
+}
+
+.learn_section h1 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-xl);
+  text-transform: uppercase;
+  color: rgba(165, 28, 48, 1);
+}
+
+.learn_section h2 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  margin-left: 4.2em;
+  margin-top: -1.4em;
+  color: rgba(165, 28, 48, 1);
+}
+
+.books_section {
+  margin: 1em;
+}
+
+.books_section p {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  color: rgba(165, 28, 48, 1);
+}
+
+.books_two,
+.books_six {
+  margin-top: -0.7em;
+}
+
+.books_three {
+  margin-top: -0.7em;
+  margin-left: 3em;
+}
+
+.books_four {
+  margin-top: -0.7em;
+  margin-left: 7em;
+}
+
+.books_five {
+  margin-top: -0.7em;
+  margin-left: 3.5em;
+}
+
+.building_section {
+  margin: 1em;
+}
+
+.building_section h1 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  color: rgba(165, 28, 48, 1);
+}
+
+.building_section h2 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  margin-left: 5.2em;
+  margin-top: -1em;
+  color: rgba(165, 28, 48, 1);
+}
+
+.papers {
+  position: absolute;
+  margin-top: 6em;
+  margin-left: -15em;
+}
+
+.books {
+  position: relative;
 }
