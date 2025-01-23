@@ -20,6 +20,27 @@ document.querySelector('#app').innerHTML = `
     </p>
   </div>
 `
+
+// Get all the buttons inside the quiz container
+const buttons = document.querySelectorAll("#buttons button");
+
+// Add event listeners to each button
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    // Check if the button is the correct answer
+    const isCorrect = button.getAttribute("data-correct") === "true";
+
+    if (isCorrect) {
+      button.classList.add("correct"); // Turn the button green
+    } else {
+      button.classList.add("wrong"); // Turn the button red
+    }
+
+    // Disable all buttons after an answer is selected
+    buttons.forEach(btn => btn.disabled = true);
+  });
+});
+
 gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 const travelScrollAnimation = () => {
 

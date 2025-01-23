@@ -46,14 +46,7 @@ body {
   margin-bottom: 10em;
 }
 
-.image {
-  display: block;
-  /* Remove extra spacing under the image */
-  width: 100%;
-  /* Optional: Adjust to fit container */
-  height: auto;
-  /* Maintain aspect ratio */
-}
+
 
 .hero_image h1 {
   position: absolute;
@@ -78,6 +71,13 @@ body {
 
 }
 
+@media screen and (min-width: 60em) {
+
+  .hero p {
+    font-size: var(--fs-md);
+  }
+}
+
 .arow {
   position: absolute;
   top: 120%;
@@ -89,13 +89,16 @@ body {
   margin: 1em;
 }
 
-.who_is h1 {
+.who_is h1,
+.who_is h2,
+.who_is h3 {
   font-family: "IM Fell French Canon SC", serif;
   font-weight: 400;
   font-style: normal;
   font-size: var(--fs-lg);
   text-transform: uppercase;
   color: rgba(165, 28, 48, 1);
+  margin-top: -1em;
 }
 
 .who_is p,
@@ -123,10 +126,61 @@ path {
   stroke-dasharray: 10;
 }
 
+@media screen and (min-width: 60em) {
+  .who_is {
+    margin-top: 50em;
+
+  }
+
+  .who_is img {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+  }
+
+  .who_is h1 {
+    position: absolute;
+    top: 20%;
+    left: 36%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .who_is h2 {
+    position: absolute;
+    top: 21.5%;
+    left: 42%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .who_is h3 {
+    position: absolute;
+    top: 23%;
+    left: 60.5%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .who_is p {
+    position: absolute;
+    top: 23%;
+    left: 65%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 45%;
+    border: none;
+  }
+
+}
+
 .one_night_section {
   /* position: relative; */
   background-color: rgba(30, 47, 116, 1);
   border-top-left-radius: 170px;
+  margin-bottom: -1.5em;
   /* Round the top-left corner */
   border-top-right-radius: 170px;
 }
@@ -173,9 +227,56 @@ path {
   margin-bottom: 1.5em;
 }
 
+@media screen and (min-width: 60em) {
+  .one_night_section h1 {
+    font-size: var(--fs-xl);
+  }
+
+  .one_night_section h2 {
+    font-size: 160px;
+  }
+
+  .one_night_section_text {
+    font-size: var(--fs-md);
+    display: flex;
+    justify-content: center;
+  }
+
+  .one_night_section {
+    border-top-left-radius: 670px;
+    border-top-right-radius: 670px;
+  }
+
+  .eye {
+    position: relative;
+    top: 50%;
+    left: 35%;
+  }
+
+  .one_night_image {
+    position: absolute;
+    top: 85%;
+    left: 25%;
+    width: 500px;
+  }
+
+  .one_night_section_text :nth-child(1) {
+    border-left: 2px dashed rgba(248, 245, 236, 1);
+    font-size: var(--fs-base);
+    padding-left: 0.5em;
+  }
+
+  .one_night_section_text :nth-child(2) {
+    border-left: 2px dashed rgba(248, 245, 236, 1);
+    font-size: var(--fs-base);
+    padding-left: 0.5em;
+  }
+
+}
+
 .attack_section {
-  position: relative;
   background-color: rgba(5, 17, 64, 1);
+  width: 100%;
 
 }
 
@@ -185,13 +286,14 @@ path {
 }
 
 .attack_section_text {
-  position: absolute;
-  top: 22%;
-  left: 25%;
+  display: flex;
+  justify-self: center;
+  text-align: center;
   font-family: "Inder", serif;
   font-size: var(--fs-base);
   color: rgba(248, 245, 236, 1);
   width: 12em;
+  height: 40em;
 }
 
 .attack_section p {
@@ -201,7 +303,8 @@ path {
   display: flex;
   justify-self: center;
   margin-bottom: 3em;
-  width: 12em;
+  width: 15em;
+  text-align: center;
 }
 
 .arrow {
@@ -209,13 +312,24 @@ path {
   margin-bottom: -1em;
 }
 
-.printing-press {
-  margin-top: -30em;
-  margin-left: 2em;
-  opacity: 0.2;
+@media screen and (min-width: 60em) {
+  .arrow {
+    width: 100%;
+    margin-left: 0em;
+
+  }
+
+  .printing-press {
+    width: 35%;
+    margin-top: -20em;
+    opacity: 0.4;
+  }
+
 }
 
+
 .new_beggining_section {
+  width: 100%;
   margin: 1em;
 }
 
@@ -235,14 +349,48 @@ path {
   color: rgba(165, 28, 48, 1);
 }
 
+.new_beggining_section p {
+  width: 90%;
+}
+
+@media screen and (min-width: 60em) {
+  .new_beggining_section h1 {
+    display: flex;
+    justify-content: center;
+    margin-left: -6.5em;
+
+  }
+
+  .new_beggining_section h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .new_beggining_section p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .clouds {
+    margin-top: -20em;
+    margin-left: -5em;
+  }
+
+}
+
 .clouds {
-  margin-left: -50em;
-  margin-top: -12em;
+  width: 110%;
 }
 
 .learn_section {
+  width: 100%;
   margin: 1em;
   margin-bottom: 7em;
+  margin-top: 10em;
 }
 
 .learn_section h1 {
@@ -261,15 +409,58 @@ path {
   color: rgba(165, 28, 48, 1);
 }
 
+.learn_section img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@media screen and (min-width: 60em) {
+  .learn_section h1 {
+    display: flex;
+    justify-content: center;
+    margin-left: -6.5em;
+
+  }
+
+  .learn_section h2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 7em;
+  }
+
+  .learn_section p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 30%;
+    margin: 0 auto;
+  }
+
+}
+
 .books_section {
+  width: 100%;
   margin: 1em;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .books_section p {
-  font-family: "IM Fell French Canon SC", serif;
+  font-family: "Inria Serif", serif;
   font-size: var(--fs-lg);
-  text-transform: uppercase;
+
   color: rgba(165, 28, 48, 1);
+}
+
+.books_one {
+  margin-left: -10em;
+  text-transform: uppercase;
 }
 
 .books_two,
@@ -292,7 +483,55 @@ path {
   margin-left: 3.5em;
 }
 
+.split_books {
+  display: flex;
+  justify-content: center;
+  margin-top: -15em;
+  width: 90%;
+}
+
+@media screen and (min-width: 60em) {
+
+  .split_books {
+    display: flex;
+    justify-content: center;
+    margin-top: -30em;
+    width: 90%;
+  }
+
+  .books_section p {
+    font-size: var(--fs-xl);
+  }
+
+  .books_section {
+    margin-top: 10em;
+    margin-bottom: 15em;
+  }
+
+  .books_two,
+  .books_six {
+    margin-top: -0.7em;
+  }
+
+  .books_three {
+    margin-top: -0.7em;
+    margin-left: 3em;
+  }
+
+  .books_four {
+    margin-top: -0.7em;
+    margin-left: 7em;
+  }
+
+  .books_five {
+    margin-top: -0.7em;
+    margin-left: 3.5em;
+  }
+
+}
+
 .building_section {
+  width: 100%;
   margin: 1em;
   margin-bottom: 8em;
 }
@@ -313,6 +552,35 @@ path {
   color: rgba(165, 28, 48, 1);
 }
 
+@media screen and (min-width: 60em) {
+  .building_block {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .building_section h1 {
+    display: flex;
+    justify-content: center;
+    margin-left: -6.5em;
+
+  }
+
+  .building_section h2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 5.5em;
+  }
+
+  .building_section p {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .building_image {
+    width: 100%;
+  }
+}
+
 .papers {
   position: absolute;
   margin-top: 6em;
@@ -321,9 +589,11 @@ path {
 
 .books {
   position: relative;
+  width: 100%;
 }
 
 .guess_section {
+
   margin: 1em;
 }
 
@@ -351,6 +621,7 @@ path {
   margin-top: -11em;
   margin-left: 8em;
 }
+
 
 .interaction_section {
   margin-top: 3em;
