@@ -22,7 +22,7 @@ document.querySelector('#app').innerHTML = `
 `
 
 // Get all the buttons inside the quiz container
-const buttons = document.querySelectorAll("#buttons button");
+const buttons = document.querySelectorAll(".buttons button");
 
 // Add event listeners to each button
 buttons.forEach(button => {
