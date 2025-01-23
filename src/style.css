@@ -40,9 +40,6 @@ body {
 }
 
 .hero_image {
-  position: relative;
-  /* Establish a positioning context for the text */
-  display: inline-block;
   margin-bottom: 10em;
 }
 
@@ -293,7 +290,8 @@ path {
   font-size: var(--fs-base);
   color: rgba(248, 245, 236, 1);
   width: 12em;
-  height: 40em;
+  padding-top: 20em;
+  padding-bottom: 20em;
 }
 
 .attack_section p {
@@ -508,32 +506,15 @@ path {
     margin-bottom: 15em;
   }
 
-  .books_two,
-  .books_six {
-    margin-top: -0.7em;
-  }
-
-  .books_three {
-    margin-top: -0.7em;
-    margin-left: 3em;
-  }
-
-  .books_four {
-    margin-top: -0.7em;
-    margin-left: 7em;
-  }
-
-  .books_five {
-    margin-top: -0.7em;
-    margin-left: 3.5em;
+  .books_one {
+    margin-left: -13em;
+    text-transform: uppercase;
   }
 
 }
 
 .building_section {
-  width: 100%;
   margin: 1em;
-  margin-bottom: 8em;
 }
 
 .building_section h1 {
@@ -550,6 +531,10 @@ path {
   margin-left: 5.2em;
   margin-top: -1em;
   color: rgba(165, 28, 48, 1);
+}
+
+.building_block div p:first-child {
+  padding-bottom: 1em;
 }
 
 @media screen and (min-width: 60em) {
@@ -572,7 +557,7 @@ path {
   }
 
   .building_section p {
-    width: 60%;
+    width: 53%;
     margin: 0 auto;
   }
 
@@ -588,16 +573,33 @@ path {
 }
 
 .books {
-  position: relative;
   width: 100%;
+  margin-left: -5em;
 }
 
-.guess_section {
+@media screen and (min-width: 60em) {
+  .books {
+    margin-left: -20em;
+    margin-top: -5em;
+  }
 
+  .building_block div {
+    margin-top: 8em;
+    margin-left: -10em;
+  }
+
+}
+
+
+.guess_section {
   margin: 1em;
+  margin-top: -6em;
 }
 
 .guess_section h1 {
+  display: flex;
+  justify-content: center;
+  margin-left: -8em;
   font-family: "IM Fell French Canon SC", serif;
   font-size: var(--fs-lg);
   text-transform: uppercase;
@@ -605,6 +607,8 @@ path {
 }
 
 .guess_section h2 {
+  display: flex;
+  justify-content: center;
   font-family: "IM Fell French Canon SC", serif;
   font-size: var(--fs-lg);
   text-transform: uppercase;
@@ -621,6 +625,7 @@ path {
   margin-top: -11em;
   margin-left: 8em;
 }
+
 
 
 .interaction_section {
@@ -673,6 +678,41 @@ path {
 .buttons button {
   flex: 1 1 calc(50% - 2em);
   max-width: calc(50% - 2em);
+}
+
+@media screen and (min-width: 60em) {
+  .guess_section {
+    margin-top: -20em;
+    margin-bottom: 30em;
+  }
+
+  .guess_text {
+    width: 40%;
+    border: none;
+    margin-bottom: 3em;
+  }
+
+  .guess_section p {
+    margin: 0 auto;
+    border: none;
+    padding: 2em;
+  }
+
+  .interaction_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .guess_section img {
+    width: 60%;
+    margin-top: -15em;
+    margin-right: -20em;
+    float: right;
+  }
 }
 
 .vision_section {
