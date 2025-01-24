@@ -39,34 +39,10 @@ body {
   margin-left: 8em;
 }
 
-.hero_image {
-  margin-bottom: 10em;
-}
 
 
 
-.hero_image h1 {
-  position: absolute;
-  top: 19%;
-  left: 49%;
-  font-family: "IM Fell French Canon SC", serif;
-  font-weight: 400;
-  font-style: normal;
-  transform: translate(-50%, -50%);
-  font-size: var(--fs-xl);
-  text-transform: uppercase;
-}
 
-.hero_image p {
-  position: absolute;
-  top: 66%;
-  left: 17%;
-  font-family: "Inder", serif;
-  font-size: var(--fs-base);
-  width: 12em;
-  color: rgba(30, 47, 116, 1);
-
-}
 
 @media screen and (min-width: 60em) {
 
@@ -102,7 +78,8 @@ body {
 .new_beggining_section p,
 .learn_section p,
 .building_section p,
-.guess_section p {
+.guess_section p,
+.visit_section p {
   font-family: "Inder", serif;
   font-size: var(--fs-base);
   color: rgba(30, 47, 116, 1);
@@ -124,52 +101,15 @@ path {
 }
 
 @media screen and (min-width: 60em) {
-  .who_is {
-    margin-top: 50em;
 
-  }
 
   .who_is img {
-    position: relative;
     display: block;
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
   }
 
-  .who_is h1 {
-    position: absolute;
-    top: 20%;
-    left: 36%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-
-  .who_is h2 {
-    position: absolute;
-    top: 21.5%;
-    left: 42%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-
-  .who_is h3 {
-    position: absolute;
-    top: 23%;
-    left: 60.5%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-
-  .who_is p {
-    position: absolute;
-    top: 23%;
-    left: 65%;
-    transform: translateX(-50%);
-    z-index: 2;
-    width: 45%;
-    border: none;
-  }
 
 }
 
@@ -180,6 +120,10 @@ path {
   margin-bottom: -1.5em;
   /* Round the top-left corner */
   border-top-right-radius: 170px;
+
+  background-image: url("./int3 pictures/antwerp.png"), url("./int3 pictures/eye.png");
+  background-position: center, center top -100%;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .one_night_section h1 {
@@ -457,7 +401,7 @@ path {
 }
 
 .books_one {
-  margin-left: -10em;
+  margin-left: -1em;
   text-transform: uppercase;
 }
 
@@ -481,11 +425,21 @@ path {
   margin-left: 3.5em;
 }
 
-.split_books {
+.books_section img {
   display: flex;
   justify-content: center;
-  margin-top: -15em;
-  width: 90%;
+  width: 170%;
+  margin-left: 3em;
+}
+
+.books_section div {
+  margin: 1em 0;
+}
+
+.books_section div img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }
 
 @media screen and (min-width: 60em) {
@@ -509,6 +463,10 @@ path {
   .books_one {
     margin-left: -13em;
     text-transform: uppercase;
+  }
+
+  .books_section img {
+    margin-left: 17em;
   }
 
 }
@@ -753,4 +711,73 @@ path {
   margin: 1em;
 }
 
-/* End of guess section */
+
+
+.visit_section h1 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-xl);
+  text-transform: uppercase;
+  color: rgba(165, 28, 48, 1);
+}
+
+.visit_section h2 {
+  font-family: "IM Fell French Canon SC", serif;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  margin-left: 4.5em;
+  margin-top: -1.4em;
+  color: rgba(165, 28, 48, 1);
+}
+
+.visit_section button {
+  background-color: rgba(30, 47, 116, 1);
+  color: rgba(248, 245, 236, 1);
+  font-family: "Inder", serif;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+.visit_section button:active,
+.visit_section button.clicked {
+  background-color: transparent;
+  color: rgba(30, 47, 116, 1);
+  border: 2px solid rgba(30, 47, 116, 1);
+}
+
+.visit_section img {
+  width: 110%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 60em) {
+  .visit_section h1 {
+    display: flex;
+    justify-content: center;
+    margin-left: -5em;
+
+  }
+
+  .visit_section h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .visit_section p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    width: 35%;
+    margin: 0 auto;
+  }
+
+
+
+}
