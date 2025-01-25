@@ -55,6 +55,87 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
+
+      gsap.registerPlugin(ScrollTrigger);
+
+
+
+      const textScrollAnimation = () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from([".who", ".is", ".christophe", ".who_is_text", ".who_is_img"], {
+          scrollTrigger: {
+            trigger: "div",
+            start: "top 80%",
+            end: "top 20%",
+            scrub: true,
+            markers: true,
+          },
+          opacity: 0,
+          y: 50,
+          stagger: 0.3,
+          duration: 1,
+        });
+
+        gsap.from([".one_night_section h1", ".one_night_section h2", ".one_night_section_text p"], {
+          scrollTrigger: {
+            trigger: ".one_night_section",
+            start: "top 80%",
+            end: "top 20%",
+            scrub: true,
+            markers: true,
+          },
+          opacity: 0,
+          y: 50,
+          stagger: 0.3,
+          duration: 1,
+        });
+
+        gsap.from([".new_beggining_section h1", ".new_beggining_section h2", ".new_beggining_section p"], {
+          scrollTrigger: {
+            trigger: ".new_beggining_section",
+            start: "top 80%",
+            end: "top 20%",
+            scrub: true,
+            markers: true,
+          },
+          opacity: 0,
+          y: 50,
+          stagger: 0.3,
+          duration: 1,
+        });
+
+        gsap.from([".learn_section h1", ".learn_section h2", ".learn_section p"], {
+          scrollTrigger: {
+            trigger: ".learn_section",
+            start: "top 80%",
+            end: "top 20%",
+            scrub: true,
+            markers: true,
+          },
+          opacity: 0,
+          y: 50,
+          stagger: 0.3,
+          duration: 1,
+        });
+
+        gsap.from([".building_section h1", ".building_section h2"], {
+        },
+          opacity: 0,
+          y: 50,
+          stagger: 0.3,
+          duration: 1,
+  });
+
+  gsap.from([".building_section h1", ".building_section h2"], {
+    scrollTrigger: {
+      trigger: ".building_section",
+      start: "top 80%",
+      end: "top 20%",
+      trigger: ".building_section",
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
       markers: true,
     },
     opacity: 0,
@@ -63,7 +144,7 @@ const textScrollAnimation = () => {
     duration: 1,
   });
 
-  gsap.from([".building_section h1", ".building_section h2"], {
+  gsap.from(".building_section_text", {
     scrollTrigger: {
       trigger: ".building_section",
       start: "top 80%",
@@ -71,107 +152,109 @@ const textScrollAnimation = () => {
       scrub: true,
       markers: true,
     },
-
+    opacity: 0,
+    x: -100,
+    duration: 1,
+    stagger: 0.3,
   });
-}
 
-const backgroundColorChange = () => {
-  ScrollTrigger.create({
-
-    trigger: '.attack_section',
-    markers: true,
-    start: "top 50%",
-    end: "bottom 0%",
-
-    onEnter: () => {
-      gsap.to('body', { duration: 1.0, backgroundColor: '#ff0000' })
+  gsap.from(".building_section img", {
+    scrollTrigger: {
+      trigger: ".building_section",
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
+      markers: true,
     },
-
-    onLeaveBack: () => {
-      gsap.to('body', { duration: 1.0, backgroundColor: '#ffffff' })
-    },
-
-
-  })
-
-}
-
-const navigation = () => {
-  document.querySelector('.js').innerHTML = "Enabled";
-
-  const $nav = document.querySelector('.nav');
-  const $navButton = document.querySelector('.nav__button');
-  const $navList = document.querySelector('.nav__list');
-  const $iconLink = document.querySelector('#iconlink');
-  const listItems = $navList.querySelectorAll("li a");
-
-  $navButton.classList.remove('hidden');
-  $navList.classList.add("hidden");
-
-  const openNavigation = () => {
-    $navButton.setAttribute("aria-expanded", "true");
-    $iconLink.setAttribute("xlink:href", "#close");
-    $navList.classList.remove("hidden");
-    $nav.classList.add('nav--fixed');
-  }
-
-  const closeNavigation = () => {
-    $navButton.setAttribute("aria-expanded", "false");
-    $iconLink.setAttribute("xlink:href", "#navicon");
-    $navList.classList.add("hidden");
-    $nav.classList.remove('nav--fixed');
-  }
-
-  const toggleNavigation = () => {
-    const open = $navButton.getAttribute("aria-expanded");
-    open === "false" ? openNavigation() : closeNavigation();
-  }
-
-
-  const handleBlur = () => {
-    //if (!event.relatedTarget || !$navList.contains(event.relatedTarget)) {
-    closeNavigation();
-    //}
-  }
-
-  $navButton.addEventListener("click", toggleNavigation);
-
-  // add event to the last item in the nav list to trigger the disclosure to close if the user tabs out of the disclosure
-  listItems[listItems.length - 1].addEventListener("blur", handleBlur);
-
-  // Close the disclosure if a user presses the escape key
-  window.addEventListener("keyup", (e) => {
-    if (e.key === "Escape") {
-      $navButton.focus();
-      closeNavigation();
-    }
+    opacity: 0,
+    x: 100,
+    duration: 1,
   });
+
+  gsap.from([".guess_section h1", ".guess_section h2", ".guess_section p"], {
+    scrollTrigger: {
+      trigger: ".guess_section",
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
+      markers: true,
+    },
+    opacity: 0,
+    y: 50,
+    stagger: 0.3,
+    duration: 1,
+  });
+
+  gsap.from(".guess_section .interaction_section", {
+    scrollTrigger: {
+      trigger: ".guess_section",
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
+      markers: true,
+    },
+    opacity: 0,
+    y: 100,
+    duration: 1,
+  });
+
+
 }
 
-const wordsPopUp = () => {
-  // Wait until the DOM is loaded
-  document.addEventListener("DOMContentLoaded", () => {
-    // GSAP Animation
-    gsap.registerPlugin(ScrollTrigger);
+const shakeText = () => {
 
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".vision_section", // The section to trigger animation
-        start: "top center", // Animation starts when section top hits center of viewport
+  gsap.fromTo(
+    ".attack_section_text",
+    { scale: 0 },
+    {
+      scale: 7,
+      duration: 0.3,
+      ease: "power4.out",
+      onComplete: () => {
+
+        gsap.fromTo(
+          ".attack_section_text",
+          { x: -5 },
+          {
+            x: 5,
+            duration: 0.05,
+            repeat: 8,
+            yoyo: true,
+            ease: "linear",
+          }
+        );
       },
-    })
-      .to(".vision_one", { opacity: 1, y: 0, duration: 0.5 })
-      .to(".vision_two", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3") // Overlap animations
-      .to(".vision_three", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
-      .to(".vision_four", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
+      scrollTrigger: {
+        trigger: ".attack_section",
+        start: "top 15%",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "play none none reset",
+      },
+    }
+  );
+
+  gsap.from([".visit_section h1", ".visit_section h2", ".visit_section p", ".visit_section button"], {
+    scrollTrigger: {
+      trigger: ".visit_section",
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
+      markers: true,
+    },
+    opacity: 0,
+    y: 50,
+    stagger: 0.3,
+    duration: 1,
   });
+
 }
+
 
 const init = () => {
-  travelScrollAnimation();
-  backgroundColorChange();
-  navigation();
-  wordsPopUp();
+  textScrollAnimation();
+  shakeText();
 }
 init();
+
 
