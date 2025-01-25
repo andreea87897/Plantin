@@ -71,122 +71,33 @@ const textScrollAnimation = () => {
       scrub: true,
       markers: true,
     },
-    opacity: 0,
-    y: 50,
-    stagger: 0.3,
-    duration: 1,
+
   });
-
-  gsap.from(".building_section_text", {
-    scrollTrigger: {
-      trigger: ".building_section",
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true,
-      markers: true,
-    },
-    opacity: 0,
-    x: -100,
-    duration: 1,
-    stagger: 0.3,
-  });
-
-  gsap.from(".building_section img", {
-    scrollTrigger: {
-      trigger: ".building_section",
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true,
-      markers: true,
-    },
-    opacity: 0,
-    x: 100,
-    duration: 1,
-  });
-
-  gsap.from([".guess_section h1", ".guess_section h2", ".guess_section p"], {
-    scrollTrigger: {
-      trigger: ".guess_section",
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true,
-      markers: true,
-    },
-    opacity: 0,
-    y: 50,
-    stagger: 0.3,
-    duration: 1,
-  });
-
-  gsap.from(".guess_section .interaction_section", {
-    scrollTrigger: {
-      trigger: ".guess_section",
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true,
-      markers: true,
-    },
-    opacity: 0,
-    y: 100,
-    duration: 1,
-  });
-
-
 }
 
-const shakeText = () => {
+const backgroundColorChange = () => {
+  ScrollTrigger.create({
 
-  gsap.fromTo(
-    ".attack_section_text",
-    { scale: 0 },
-    {
-      scale: 7,
-      duration: 0.3,
-      ease: "power4.out",
-      onComplete: () => {
+    trigger: '.attack_section',
+    markers: true,
+    start: "top 50%",
+    end: "bottom 0%",
 
-        gsap.fromTo(
-          ".attack_section_text",
-          { x: -5 },
-          {
-            x: 5,
-            duration: 0.05,
-            repeat: 8,
-            yoyo: true,
-            ease: "linear",
-          }
-        );
-      },
-      scrollTrigger: {
-        trigger: ".attack_section",
-        start: "top 15%",
-        end: "top 50%",
-        markers: true,
-        toggleActions: "play none none reset",
-      },
-    }
-  );
-
-  gsap.from([".visit_section h1", ".visit_section h2", ".visit_section p", ".visit_section button"], {
-    scrollTrigger: {
-      trigger: ".visit_section",
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true,
-      markers: true,
+    onEnter: () => {
+      gsap.to('body', { duration: 1.0, backgroundColor: '#ff0000' })
     },
-    opacity: 0,
-    y: 50,
-    stagger: 0.3,
-    duration: 1,
-  });
+
+    onLeaveBack: () => {
+      gsap.to('body', { duration: 1.0, backgroundColor: '#ffffff' })
+    },
+
+
+  })
 
 }
-
-
 const init = () => {
-  textScrollAnimation();
-  shakeText();
+  travelScrollAnimation();
+  backgroundColorChange();
 }
 init();
 
