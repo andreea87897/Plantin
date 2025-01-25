@@ -388,7 +388,7 @@ body {
 
 
 .attack_section {
-  background-color: rgba(5, 17, 64, 1);
+  background-color: rgba(30, 47, 116, 1);
   width: 100%;
 
 }
@@ -408,6 +408,7 @@ body {
   width: 12em;
   padding-top: 20em;
   padding-bottom: 20em;
+  transform-origin: center;
 }
 
 .attack_section p {
