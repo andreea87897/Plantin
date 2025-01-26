@@ -1035,10 +1035,9 @@ canvas {
 }
 
 .visit_section {
-  margin-top: 3em;
   background-image: url("./assets/footer.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom;
   background-size: cover;
 }
 
@@ -1085,6 +1084,11 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer_icons img {
+  width: 50px;
+  height: auto;
 }
 
 @media screen and (min-width: 60em) {

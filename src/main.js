@@ -9,7 +9,7 @@ const textScrollAnimation = () => {
 
   gsap.from([".who", ".is", ".christophe", ".who_is_text", ".who_is_img"], {
     scrollTrigger: {
-      trigger: "div",
+      trigger: ".who_is",
       start: "top 80%",
       end: "top 20%",
       scrub: true,
@@ -128,7 +128,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
   });
 
@@ -173,18 +172,7 @@ const shakeText = () => {
     }
   );
 
-  gsap.from([".visit_section h1", ".visit_section h2", ".visit_section p", ".visit_section button"], {
-    scrollTrigger: {
-      trigger: ".visit_section",
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true,
-    },
-    opacity: 0,
-    y: 50,
-    stagger: 0.3,
-    duration: 1,
-  });
+
 
 }
 
