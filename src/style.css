@@ -710,7 +710,7 @@ canvas {
 }
 
 .books_one {
-
+  margin-left: 5em;
   text-transform: uppercase;
 }
 
@@ -739,10 +739,6 @@ canvas {
   justify-content: center;
   width: 170%;
   margin-left: 3em;
-}
-
-.books_section div {
-  margin: 1em 0;
 }
 
 .books_section div img {
@@ -774,8 +770,16 @@ canvas {
   }
 
   .books_one {
-    margin-left: -13em;
+    margin-left: -1.5em;
     text-transform: uppercase;
+  }
+
+  .books_four {
+    margin-left: 5em;
+  }
+
+  .books_six {
+    margin-left: 5em;
   }
 
   .books_section img {
@@ -1013,27 +1017,21 @@ canvas {
 }
 
 .vision_one {
-  opacity: 0;
-  transform: translateY(30px);
   margin-left: 0em;
 }
 
 .vision_two {
-  opacity: 0;
-  transform: translateY(30px);
+
   margin-left: 2em;
 }
 
 .vision_three {
-  opacity: 0;
-  transform: translateY(30px);
   margin-left: 7em;
 }
 
 .vision_four {
-  opacity: 0;
-  transform: translateY(30px);
-  margin-left: 12em;
+  padding-bottom: 2em;
+  margin-left: 11em;
 }
 
 .visit_section {
@@ -1091,6 +1089,7 @@ canvas {
 
 @media screen and (min-width: 60em) {
 
+
   .visit_section {
     background-image: url("./assets/footer_desktop.png");
     background-repeat: no-repeat;
@@ -1122,5 +1121,32 @@ canvas {
     margin: 0 auto;
   }
 
+  .vision_section img {
+    margin-top: -50em;
+    width: 80%;
+    margin-left: 0em;
+  }
+
+  .vision_one {
+    margin-left: 15.5em;
+    padding-top: 5em;
+    font-size: var(--fs-xl);
+  }
+
+  .vision_two {
+    margin-left: 21em;
+    font-size: var(--fs-xl);
+  }
+
+  .vision_three {
+    margin-left: 29em;
+    font-size: var(--fs-xl);
+  }
+
+  .vision_four {
+    margin-left: 35em;
+    padding-bottom: 5.5em;
+    font-size: var(--fs-xl);
+  }
 
 }

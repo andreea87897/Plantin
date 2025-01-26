@@ -122,7 +122,21 @@ const textScrollAnimation = () => {
     duration: 1,
   });
 
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".vision_section",
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true,
+      markers: true,
+    },
+  });
 
+  timeline
+    .from(".vision_one", { opacity: 0, y: 100, duration: 1 })
+    .from(".vision_two", { opacity: 0, y: 100, duration: 1 }, "+=0.2")
+    .from(".vision_three", { opacity: 0, y: 100, duration: 1 }, "+=0.2")
+    .from(".vision_four", { opacity: 0, y: 100, duration: 1 }, "+=0.2");
 
 
 }
@@ -242,14 +256,7 @@ const stampGame = () => {
 
 }
 
-
-
-const init = () => {
-  textScrollAnimation();
-  shakeText();
-  interactionLanguage();
-  stampGame();
-
+const hamburger = () => {
   const hamburger = document.querySelector('.hamburger');
   const menu = document.querySelector('.menu');
 
@@ -271,6 +278,15 @@ const init = () => {
       hamburger.classList.remove('open');
     }
   });
+
+}
+
+const init = () => {
+  textScrollAnimation();
+  shakeText();
+  interactionLanguage();
+  stampGame();
+  hamburger();
 
 
 }
