@@ -32,12 +32,168 @@ body {
   display: none;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 245, 236, 1);
+  opacity: 98%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
+.hamburger div {
+  width: 100%;
+  height: 3px;
+  background: rgba(30, 47, 116, 1);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
 
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 8em;
+}
+
+.desktop-buttons {
+  display: none;
+}
+
+@media (min-width: 60em) {
+  .menu {
+    display: none;
+    flex-direction: row;
+    height: auto;
+    background-color: transparent;
+    position: static;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+
+  .menu a {
+    color: rgba(30, 47, 116, 1);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .desktop-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 2rem;
+    top: 2em;
+  }
+
+  .desktop-buttons .other-stories,
+  .desktop-buttons .get-tickets {
+    background: rgba(30, 47, 116, 1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .mobile-get-tickets {
+    display: none;
+  }
+}
+
+.hero_image {
+  text-align: center;
+  padding: 3rem;
+}
+
+.hero_image h1 {
+  font-size: 2.5rem;
+  color: rgba(30, 47, 116, 1);
+}
+
+.hero_image p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: rgba(30, 47, 116, 0.8);
+}
+
+.hero_image .arow {
+  margin-top: 1rem;
+}
+
+@media (max-width: 60em) {
+  .desktop-buttons {
+    display: none;
+  }
+
+  .mobile-get-tickets {
+    display: block;
+    margin-top: 1rem;
+    background: rgba(30, 47, 116, 1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
 }
 
 canvas {
@@ -65,6 +221,7 @@ canvas {
   object-fit: contain;
   height: 400px;
   background-size: cover;
+  margin-top: 5em;
   margin-bottom: 15em;
 }
 
@@ -72,13 +229,12 @@ canvas {
   font-family: "IM Fell French Canon SC", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   width: min-content;
-  padding-top: 3em;
-  padding-left: 2.2em;
+  margin-left: 0.2em;
 }
 
 .hero_image p {
@@ -86,15 +242,27 @@ canvas {
   font-size: var(--fs-base);
   color: rgba(30, 47, 116, 1);
   width: 12em;
-  margin-top: 10em;
-  margin-left: 3.5em;
+  margin-top: 8em;
+  margin-left: 0.5em;
+  text-align: left;
 }
 
-.hero_image img {
-  margin-top: -13em;
-  margin-left: -1.5em;
-  animation: scrollAnimation 1.5s ease-in-out infinite;
+.hero_image button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2em;
+  width: 10em;
+  height: 3em;
 }
+
+@media screen and (min-width: 60em) {
+
+  .hero_image img {
+    animation: scrollAnimation 1.5s ease-in-out infinite;
+  }
+}
+
+
 
 @keyframes scrollAnimation {
   0% {
@@ -126,21 +294,25 @@ canvas {
     height: 500px;
   }
 
+  .hero_image button {
+    display: none;
+  }
+
   .hero_image h1 {
     font-size: var(--fs-xxxl);
-    padding-left: 5em;
-    padding-top: 1.2em;
+    padding-left: 4em;
+
   }
 
   .hero_image p {
-    margin-left: 21em;
+    margin-left: 22em;
     margin-top: -3em;
     width: 30%;
 
   }
 
   .hero_image img {
-    margin-top: -17em;
+    margin-top: 0;
     margin-left: -2em;
   }
 }

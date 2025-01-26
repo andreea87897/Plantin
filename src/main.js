@@ -13,7 +13,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 50,
@@ -27,7 +26,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 50,
@@ -41,7 +39,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 50,
@@ -55,7 +52,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 50,
@@ -69,7 +65,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 50,
@@ -83,7 +78,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     x: -100,
@@ -97,7 +91,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     x: 100,
@@ -110,7 +103,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 50,
@@ -124,7 +116,6 @@ const textScrollAnimation = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 100,
@@ -163,7 +154,6 @@ const shakeText = () => {
         trigger: ".attack_section",
         start: "top 15%",
         end: "top 50%",
-        markers: true,
         toggleActions: "play none none reset",
       },
     }
@@ -175,7 +165,6 @@ const shakeText = () => {
       start: "top 80%",
       end: "top 20%",
       scrub: true,
-      markers: true,
     },
     opacity: 0,
     y: 50,
@@ -253,11 +242,37 @@ const stampGame = () => {
 
 }
 
+
+
 const init = () => {
   textScrollAnimation();
   shakeText();
   interactionLanguage();
   stampGame();
+
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    hamburger.classList.toggle('open');
+
+    if (menu.classList.contains('show')) {
+      menu.style.display = 'flex';
+    } else {
+      menu.style.display = 'none';
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      menu.style.display = 'none';
+      menu.classList.remove('show');
+      hamburger.classList.remove('open');
+    }
+  });
+
+
 }
 
 init();
